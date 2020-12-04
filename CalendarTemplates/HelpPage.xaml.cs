@@ -146,7 +146,14 @@ namespace net.reidemeister.wp.CalendarTemplates
         {
             ListingInformation li = await Store.CurrentApp.LoadListingInformationAsync();
             string productID = li.ProductListings[productKey].ProductId;
-            await Store.CurrentApp.RequestProductPurchaseAsync(productID, false);
+            try
+            {
+                await Store.CurrentApp.RequestProductPurchaseAsync(productID, false);
+            }
+            catch (Exception) 
+            { 
+                // egal
+            }
             await this.UpdateLicense();
         }
 

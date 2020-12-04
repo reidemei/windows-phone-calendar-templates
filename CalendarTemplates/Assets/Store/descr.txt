@@ -3,9 +3,8 @@
 Note: The app does not up- or download anything, but "data services" is required to be able to create secondary tiles.
 
 
-fixed in version 1.1.0.0:
-• templates disapperaed after edit
-• remove the tile when removing the template
+changed in version 1.2.0.0:
+• unlimited number of templates
 
 -----------------------------------------
 
@@ -14,6 +13,5 @@ fixed in version 1.1.0.0:
 Anmerkung: Es werden keinerlei Daten hoch- oder runtergeladen, aber "Datendienste" ist erforderlich, um weitere Tiles auf der Startseite hinzufügen zu können.
 
 
-Korrigiert in Version 1.1.0.0:
-• Verlagen verschwinden dem Editieren
-• Tile entfernen, wenn die Vorlage gelöscht wird
+Geändert in Version 1.2.0.0:
+• beliebig viele Verlagen können erstellt werden

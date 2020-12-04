@@ -4,7 +4,7 @@
   <Languages xmlns="">
     <Language code="de" />
   </Languages>
-  <App xmlns="" ProductID="{8a51cd56-d133-4fbd-942d-f231debcea50}" Title="@AppResLib.dll,-100" RuntimeType="Silverlight" Version="1.1.0.0" Genre="apps.normal" Author="Jan Reidemeister" Description="user defined templates to quickly add new appointments to the calendar" Publisher="Jan Reidemeister" PublisherID="{7176bf11-ee13-48ad-a7bc-1ae634135592}">
+  <App xmlns="" ProductID="{8a51cd56-d133-4fbd-942d-f231debcea50}" Title="@AppResLib.dll,-100" RuntimeType="Silverlight" Version="1.2.0.0" Genre="apps.normal" Author="Jan Reidemeister" Description="user defined templates to quickly add new appointments to the calendar" Publisher="Jan Reidemeister" PublisherID="{7176bf11-ee13-48ad-a7bc-1ae634135592}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
