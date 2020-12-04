@@ -322,4 +322,16 @@ You can also pin templates to the start screen (hold for the menu). Tapping the 
   <data name="Version" xml:space="preserve">
     <value>version </value>
   </data>
+  <data name="RunDonation1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RunDonation2" xml:space="preserve">
+    <value>If you like the app consider giving me a </value>
+  </data>
+  <data name="RunDonation3" xml:space="preserve">
+    <value>donation</value>
+  </data>
+  <data name="RunDonation4" xml:space="preserve">
+    <value>.</value>
+  </data>
 </root>

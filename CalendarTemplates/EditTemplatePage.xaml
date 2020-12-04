@@ -8,6 +8,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:r="clr-namespace:net.reidemeister.wp.CalendarTemplates.Resources"
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:attachedProperties="clr-namespace:DotNetChannel.Silverlight.AttachedProperties.AutoSelectText"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -87,8 +88,9 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <TextBox x:Name="StartTimeOffset" InputScope="Number" TextAlignment="Right" 
-                                IsEnabled="{Binding IsChecked, ElementName=UseTime}"
-                                Text="{Binding TimeStartOffsetMinutes, Converter={StaticResource intToStringConverter}, Mode=TwoWay}" />
+                             attachedProperties:AttachedProperties.AutoSelectText="true"
+                             IsEnabled="{Binding IsChecked, ElementName=UseTime}"
+                             Text="{Binding TimeStartOffsetMinutes, Converter={StaticResource intToStringConverter}, Mode=TwoWay}" />
                     <TextBlock Text="{Binding Path=LocalizedResources.Minutes, Source={StaticResource LocalizedStrings}}" 
                                 Grid.Column="1" VerticalAlignment="Center" Margin="0,0,12,0"
                                 Style="{StaticResource PhoneTextTitle3Style}" />
@@ -102,6 +104,7 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <TextBox InputScope="Number" TextAlignment="Right" 
+                             attachedProperties:AttachedProperties.AutoSelectText="true"
                              Text="{Binding TimeEndOffsetDays, Converter={StaticResource intToStringConverter}, Mode=TwoWay}" />
                     <TextBlock Text="{Binding Path=LocalizedResources.Days, Source={StaticResource LocalizedStrings}}" 
                                Grid.Column="1" VerticalAlignment="Center" Margin="0,0,12,0"
@@ -117,16 +120,19 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <TextBox InputScope="Number" TextAlignment="Right" 
+                             attachedProperties:AttachedProperties.AutoSelectText="true"
                              Text="{Binding TimeEndOffsetDays, Converter={StaticResource intToStringConverter}, Mode=TwoWay}" />
                     <TextBlock Text="{Binding Path=LocalizedResources.Days, Source={StaticResource LocalizedStrings}}" 
                                Grid.Column="1" VerticalAlignment="Center" Margin="0,0,12,0"
                                Style="{StaticResource PhoneTextTitle3Style}" />
                     <TextBox InputScope="Number" TextAlignment="Right" Grid.Column="2" 
+                             attachedProperties:AttachedProperties.AutoSelectText="true"
                              Text="{Binding TimeEndOffsetHours, Converter={StaticResource intToStringConverter}, Mode=TwoWay}" />
                     <TextBlock Text="{Binding Path=LocalizedResources.Hours, Source={StaticResource LocalizedStrings}}" 
                                Grid.Column="3" VerticalAlignment="Center" Margin="0,0,12,0"
                                Style="{StaticResource PhoneTextTitle3Style}" />
                     <TextBox x:Name="EndMinutesOffset" InputScope="Number" TextAlignment="Right" Grid.Column="4" 
+                             attachedProperties:AttachedProperties.AutoSelectText="true"
                              Text="{Binding TimeEndOffsetMinutes, Converter={StaticResource intToStringConverter}, Mode=TwoWay}" />
                     <TextBlock Text="{Binding Path=LocalizedResources.Minutes, Source={StaticResource LocalizedStrings}}" 
                                Grid.Column="5" VerticalAlignment="Center" Margin="0,0,12,0"

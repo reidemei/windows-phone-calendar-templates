@@ -30,6 +30,7 @@ namespace net.reidemeister.wp.CalendarTemplates
 
             if (e.NavigationMode == NavigationMode.Back)
             {
+                LayoutRoot.Visibility = System.Windows.Visibility.Visible;
                 return;
                 //throw new ExitException();
             }
@@ -47,7 +48,6 @@ namespace net.reidemeister.wp.CalendarTemplates
                 Uri uri = (Uri)new StringToUriValueConverter().Convert(template.Icon, null, null, null);
                 BitmapImage img = new BitmapImage(uri);
                 this.Icon.Source = img;
-                LayoutRoot.Visibility = System.Windows.Visibility.Visible;
             }
         }
 

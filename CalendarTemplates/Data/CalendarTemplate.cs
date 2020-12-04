@@ -17,7 +17,7 @@ using System.Collections.Generic;
 
 namespace net.reidemeister.wp.CalendarTemplates.Data
 {
-    public class CalendarTemplate : INotifyPropertyChanged
+    public class CalendarTemplate : INotifyPropertyChanged, IComparable
     {
         private const int TIME_CURRENT = 0;
         private const int TIME_FIXED = 1;
@@ -91,6 +91,13 @@ namespace net.reidemeister.wp.CalendarTemplates.Data
 
         #endregion
 #endif
+
+        public int CompareTo(object obj)
+        {
+            CalendarTemplate ct = obj as CalendarTemplate;
+            return (this.Name.CompareTo(ct.Name));
+        }
+
         public string ID { get; set; }
 
         private string icon = "clock.png";
@@ -328,7 +335,7 @@ namespace net.reidemeister.wp.CalendarTemplates.Data
             xws.Indent = true;
             StorageFolder local = Windows.Storage.ApplicationData.Current.LocalFolder;
             var dataFolder = await local.CreateFolderAsync("templates", CreationCollisionOption.OpenIfExists);
-            using (var s = await dataFolder.OpenStreamForWriteAsync(this.ID + ".xml", CreationCollisionOption.OpenIfExists))
+            using (var s = await dataFolder.OpenStreamForWriteAsync(this.ID + ".xml", CreationCollisionOption.ReplaceExisting))
             {
                 using (XmlWriter xw = XmlWriter.Create(s, xws))
                 {
@@ -381,7 +388,12 @@ namespace net.reidemeister.wp.CalendarTemplates.Data
                     return (template);
                 }
             } 
-            catch (Exception) {}
+            catch (Exception) 
+            {
+#if DEBUG
+                if (Debugger.IsAttached) Debugger.Break();
+#endif
+            }
             return (null);
         }
 

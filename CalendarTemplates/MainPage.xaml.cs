@@ -98,6 +98,10 @@ namespace net.reidemeister.wp.CalendarTemplates.Pages
 #if DEBUG
             Debug.WriteLine("removing file '" + template.ID + "' for deleted template '" + template.Name + "'");
 #endif
+            if (template.HasTitle)
+            {
+                template.DeleteTile();
+            }
             try
             {
                 StorageFolder local = Windows.Storage.ApplicationData.Current.LocalFolder;

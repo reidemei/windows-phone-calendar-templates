@@ -1,10 +1,19 @@
 ﻿"Calendar Templates" allows to define templates to quickly create appointments in your calendar. You can pin those templates as tiles to the start screen.
 
-
 Note: The app does not up- or download anything, but "data services" is required to be able to create secondary tiles.
+
+
+fixed in version 1.1.0.0:
+• templates disapperaed after edit
+• remove the tile when removing the template
 
 -----------------------------------------
 
 "Kalendervorlagen" erlaubt das Anlegen von Vorlagen, mit denen schnell Kalendereinträge erstellt werden können. Diese Vorlagen können auch auf der Startseite angeheftet werden.
 
 Anmerkung: Es werden keinerlei Daten hoch- oder runtergeladen, aber "Datendienste" ist erforderlich, um weitere Tiles auf der Startseite hinzufügen zu können.
+
+
+Korrigiert in Version 1.1.0.0:
+• Verlagen verschwinden dem Editieren
+• Tile entfernen, wenn die Vorlage gelöscht wird

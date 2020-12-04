@@ -172,6 +172,10 @@ namespace net.reidemeister.wp.CalendarTemplates.Pages
             }
             this.original.CopyFrom(this.template);
             await this.original.Save();
+            if (this.original.HasTitle)
+            {
+                this.original.UpdateTile();
+            }
             this.NavigationService.GoBack();
         }
 
