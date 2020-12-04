@@ -1,0 +1,54 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="net.reidemeister.wp.CalendarTemplates.HelpPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <Grid Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="Version" Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="{Binding Path=LocalizedResources.HelpTitle, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1" Margin="12,0,12,0">
+            <StackPanel Margin="12,0">
+                <TextBlock Text="{Binding Path=LocalizedResources.HelpIntro, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap"/>
+                <TextBlock Text="{Binding Path=LocalizedResources.HelpSupportHeader, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" Style="{StaticResource JumpListStringStyle}" Margin="0,10,0,10"/>
+                <TextBlock Text="{Binding Path=LocalizedResources.HelpSupportDescr1, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap"/>
+                <HyperlinkButton Content="support.calendar.templates@outlook.com" NavigateUri="mailto:support.calendar.templates@outlook.com?subject=Calendar%20Templates" TargetName="_blank" HorizontalAlignment="Center" Margin="-12,6"/>
+                <TextBlock x:Name="DonationDescr" Text="{Binding Path=LocalizedResources.HelpDonation, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" Margin="0,6,0,0" Visibility="Collapsed"/>
+                <Grid x:Name="DonationButtons" Visibility="Collapsed">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="DonationSmall" Content="{Binding Path=LocalizedResources.HelpDonationSmall, Source={StaticResource LocalizedStrings}}" IsEnabled="False" Click="DonationSmall_Click" />
+                    <Button x:Name="DonationMedium" Content="{Binding Path=LocalizedResources.HelpDonationMedium, Source={StaticResource LocalizedStrings}}" IsEnabled="False" Grid.Column="1" Click="DonationMedium_Click" />
+                    <Button x:Name="DonationBig" Content="{Binding Path=LocalizedResources.HelpDonationBig, Source={StaticResource LocalizedStrings}}" IsEnabled="False" Grid.Column="2" Click="DonationBig_Click" />
+                </Grid>
+                <Button Content="{Binding Path=LocalizedResources.Rate, Source={StaticResource LocalizedStrings}}" Click="Rate_Click" />
+                <TextBlock Text="{Binding Path=LocalizedResources.HelpSupportDescr2, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" Margin="0,6,0,0"/>
+                <TextBlock Text="{Binding Path=LocalizedResources.InfoCreateHeader, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" Style="{StaticResource JumpListStringStyle}" Margin="0,10,0,10"/>
+                <TextBlock Text="{Binding Path=LocalizedResources.InfoCreateDescr, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap"/>
+                <TextBlock Text="{Binding Path=LocalizedResources.InfoRunHeader, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" Style="{StaticResource JumpListStringStyle}" Margin="0,10,0,10"/>
+                <TextBlock Text="{Binding Path=LocalizedResources.InfoRunDescr, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+
+</phone:PhoneApplicationPage>

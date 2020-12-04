@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ResourceFlowDirection" xml:space="preserve">
+    <value>LeftToRight</value>
+    <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
+  </data>
+  <data name="ResourceLanguage" xml:space="preserve">
+    <value>en</value>
+    <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
+  </data>
+  <data name="ApplicationTitle" xml:space="preserve">
+    <value>CALENDAR TEMPLATES</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>add</value>
+  </data>
+  <data name="Days" xml:space="preserve">
+    <value>days</value>
+  </data>
+  <data name="EditTitle" xml:space="preserve">
+    <value>edit template</value>
+  </data>
+  <data name="End" xml:space="preserve">
+    <value>End (offset to start)</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>help</value>
+  </data>
+  <data name="Hours" xml:space="preserve">
+    <value>hours</value>
+  </data>
+  <data name="IconAndName" xml:space="preserve">
+    <value>Icon + Name</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="MainTitle" xml:space="preserve">
+    <value>templates</value>
+  </data>
+  <data name="Minutes" xml:space="preserve">
+    <value>minutes</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Notes" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="Reminder" xml:space="preserve">
+    <value>Reminder</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Start (day is always the current day)</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Status0" xml:space="preserve">
+    <value>free</value>
+  </data>
+  <data name="Status1" xml:space="preserve">
+    <value>tentative</value>
+  </data>
+  <data name="Status2" xml:space="preserve">
+    <value>busy</value>
+  </data>
+  <data name="Status3" xml:space="preserve">
+    <value>out of office</value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="Time0" xml:space="preserve">
+    <value>current time</value>
+  </data>
+  <data name="Time1" xml:space="preserve">
+    <value>fixed time</value>
+  </data>
+  <data name="Time2" xml:space="preserve">
+    <value>current time + offset</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>cancel</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>save</value>
+  </data>
+  <data name="Icon" xml:space="preserve">
+    <value>Icon</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>delete</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>edit</value>
+  </data>
+  <data name="Pin" xml:space="preserve">
+    <value>pin tile to start</value>
+  </data>
+  <data name="EditConfirmExitDescr" xml:space="preserve">
+    <value>Any unsaved changes will be lost!</value>
+  </data>
+  <data name="Reminder0" xml:space="preserve">
+    <value>no reminder</value>
+  </data>
+  <data name="Reminder1" xml:space="preserve">
+    <value>at start time</value>
+  </data>
+  <data name="Reminder2" xml:space="preserve">
+    <value>5 minutes</value>
+  </data>
+  <data name="Reminder3" xml:space="preserve">
+    <value>10 minutes</value>
+  </data>
+  <data name="Reminder4" xml:space="preserve">
+    <value>15 minutes</value>
+  </data>
+  <data name="Reminder5" xml:space="preserve">
+    <value>30 minutes</value>
+  </data>
+  <data name="Reminder6" xml:space="preserve">
+    <value>1 hour</value>
+  </data>
+  <data name="Reminder7" xml:space="preserve">
+    <value>18 hours</value>
+  </data>
+  <data name="Reminder8" xml:space="preserve">
+    <value>1 day</value>
+  </data>
+  <data name="Reminder9" xml:space="preserve">
+    <value>1 week</value>
+  </data>
+  <data name="Time3" xml:space="preserve">
+    <value>all day</value>
+  </data>
+  <data name="Unpin" xml:space="preserve">
+    <value>remove tile from start</value>
+  </data>
+  <data name="AddTitle" xml:space="preserve">
+    <value>add template</value>
+  </data>
+  <data name="RunDescr" xml:space="preserve">
+    <value>finished</value>
+  </data>
+  <data name="RunNote" xml:space="preserve">
+    <value>Microsoft does not provide a way to close the app. Please use the back button.</value>
+  </data>
+  <data name="AllTemplates" xml:space="preserve">
+    <value>templates</value>
+  </data>
+  <data name="EditConfirmExitTitle" xml:space="preserve">
+    <value>Unsaved changes!</value>
+  </data>
+  <data name="HelpDonationBig" xml:space="preserve">
+    <value>Big</value>
+  </data>
+  <data name="HelpDonationMedium" xml:space="preserve">
+    <value>Medium</value>
+  </data>
+  <data name="HelpDonationSmall" xml:space="preserve">
+    <value>Small</value>
+  </data>
+  <data name="HelpIntro" xml:space="preserve">
+    <value>"Calendar Templates" allows to define templates to quickly create appointments in your calendar. You can pin those templates as tiles to the start screen.</value>
+  </data>
+  <data name="HelpSupportDescr1" xml:space="preserve">
+    <value>You can contact me via the following address for questions, feedback, enhancements or problems.</value>
+  </data>
+  <data name="HelpSupportDescr2" xml:space="preserve">
+    <value>Please note that it is not possible to reply to comments in the store.</value>
+  </data>
+  <data name="HelpSupportHeader" xml:space="preserve">
+    <value>SUPPORT</value>
+  </data>
+  <data name="HelpTitle" xml:space="preserve">
+    <value>help</value>
+  </data>
+  <data name="InfoCreateDescr" xml:space="preserve">
+    <value>You can create templates via the "add"-button on the main page.
+On the new page set all properties you want to set for your appointments. The icon and name are only used in this app and will not appear in the calendar. You can leave any textfield empty when you don't need it.
+
+To edit an existing template tap and hold in the list and choose the "edit" menu.</value>
+  </data>
+  <data name="InfoCreateHeader" xml:space="preserve">
+    <value>CREATE TEMPLATES</value>
+  </data>
+  <data name="InfoRunDescr" xml:space="preserve">
+    <value>To run a template simply tap on it in the main page. A new appointment with all properties from the template will be created. You will see all values in the regular calendar app and you have to save the appointment there.
+
+You can also pin templates to the start screen (hold for the menu). Tapping the tile will directly create the new appointment.</value>
+  </data>
+  <data name="InfoRunHeader" xml:space="preserve">
+    <value>RUN TEMPLATES</value>
+  </data>
+  <data name="Thanks" xml:space="preserve">
+    <value>Thanks!</value>
+  </data>
+  <data name="HelpDonation" xml:space="preserve">
+    <value>If you like the app consider giving me a donation via IAP. The money will help me to continue supporting the app.</value>
+  </data>
+  <data name="Rate" xml:space="preserve">
+    <value>Rate in the Store</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>version </value>
+  </data>
+</root>

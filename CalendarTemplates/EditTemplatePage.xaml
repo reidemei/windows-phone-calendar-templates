@@ -1,0 +1,165 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="net.reidemeister.wp.CalendarTemplates.Pages.EditTemplatePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:r="clr-namespace:net.reidemeister.wp.CalendarTemplates.Resources"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True"
+    toolkit:TiltEffect.IsTiltEnabled="True"
+    Style="{StaticResource TransitionPageStyle}">
+
+    <phone:PhoneApplicationPage.Resources>
+        <r:BoolToVisibilityValueConverter x:Key="boolToVisibilityConverter"/>
+        <r:IntToVisibilityValueConverter x:Key="intToVisibilityConverter"/>
+        <r:IntToBoolValueConverter x:Key="intToBoolConverter"/>
+        <r:IntToStringValueConverter x:Key="intToStringConverter"/>
+        <r:StringToUriValueConverter x:Key="stringToUriValueConverter"/>
+    </phone:PhoneApplicationPage.Resources>
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="{Binding Path=LocalizedResources.EditTitle, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <ScrollViewer x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <StackPanel>
+                <TextBlock Text="{Binding Path=LocalizedResources.IconAndName, Source={StaticResource LocalizedStrings}}" 
+                           VerticalAlignment="Center" Margin="12,0"
+                           Style="{StaticResource PhoneTextTitle3Style}" />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <toolkit:ListPicker x:Name="Icon" Width="72" Height="60" Margin="12,-8,12,0" 
+                                        FullModeHeader="{Binding Path=LocalizedResources.Icon, Source={StaticResource LocalizedStrings}}" 
+                                        CacheMode="BitmapCache" 
+                                        SelectedItem="{Binding Icon, Mode=TwoWay}">
+                        <toolkit:ListPicker.ItemTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding Converter={StaticResource stringToUriValueConverter}}" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-20,-14,-20,-20" Width="60" Height="60"/>
+                            </DataTemplate>
+                        </toolkit:ListPicker.ItemTemplate>
+                        <toolkit:ListPicker.FullModeItemTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding Converter={StaticResource stringToUriValueConverter}}" Width="60" Height="60" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </DataTemplate>
+                        </toolkit:ListPicker.FullModeItemTemplate>
+                    </toolkit:ListPicker>
+                    <TextBox InputScope="Text" Grid.Column="1" Text="{Binding Name, Mode=TwoWay}" />
+                </Grid>
+                <TextBlock Text="{Binding Path=LocalizedResources.Subject, Source={StaticResource LocalizedStrings}}" 
+                                   VerticalAlignment="Center" Margin="12,12,12,0"
+                                   Style="{StaticResource PhoneTextTitle3Style}" />
+                <TextBox InputScope="Text" Text="{Binding Subject, Mode=TwoWay}" />
+                <TextBlock Text="{Binding Path=LocalizedResources.Location, Source={StaticResource LocalizedStrings}}" 
+                                   VerticalAlignment="Center" Margin="12,12,12,0"
+                                   Style="{StaticResource PhoneTextTitle3Style}" />
+                <TextBox InputScope="Text" Text="{Binding Location, Mode=TwoWay}" />
+                <TextBlock Text="{Binding Path=LocalizedResources.Start, Source={StaticResource LocalizedStrings}}" 
+                           VerticalAlignment="Center" Margin="12,12,12,0"
+                           Style="{StaticResource PhoneTextTitle3Style}"/>
+                <toolkit:ListPicker x:Name="StartType" IsEnabled="{Binding IsChecked, ElementName=UseTime}" SelectedIndex="{Binding Time, Mode=TwoWay}">
+                    <toolkit:ListPickerItem Content="{Binding Path=LocalizedResources.Time0, Source={StaticResource LocalizedStrings}}"/>
+                    <toolkit:ListPickerItem Content="{Binding Path=LocalizedResources.Time1, Source={StaticResource LocalizedStrings}}"/>
+                    <toolkit:ListPickerItem Content="{Binding Path=LocalizedResources.Time2, Source={StaticResource LocalizedStrings}}"/>
+                    <toolkit:ListPickerItem Content="{Binding Path=LocalizedResources.Time3, Source={StaticResource LocalizedStrings}}"/>
+                </toolkit:ListPicker>
+                <toolkit:TimePicker x:Name="StartTime" Visibility="{Binding SelectedIndex, ConverterParameter=1, Converter={StaticResource intToVisibilityConverter}, ElementName=StartType}" Value="{Binding FixedStartTime, Mode=TwoWay}"/>
+                <Grid Visibility="{Binding SelectedIndex, ConverterParameter=2, Converter={StaticResource intToVisibilityConverter}, ElementName=StartType}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="StartTimeOffset" InputScope="Number" TextAlignment="Right" 
+                                IsEnabled="{Binding IsChecked, ElementName=UseTime}"
+                                Text="{Binding TimeStartOffsetMinutes, Converter={StaticResource intToStringConverter}, Mode=TwoWay}" />
+                    <TextBlock Text="{Binding Path=LocalizedResources.Minutes, Source={StaticResource LocalizedStrings}}" 
+                                Grid.Column="1" VerticalAlignment="Center" Margin="0,0,12,0"
+                                Style="{StaticResource PhoneTextTitle3Style}" />
+                </Grid>
+                <TextBlock Text="{Binding Path=LocalizedResources.End, Source={StaticResource LocalizedStrings}}" 
+                           VerticalAlignment="Center" Margin="12,12,12,0"
+                           Style="{StaticResource PhoneTextTitle3Style}"/>
+                <Grid Visibility="{Binding SelectedIndex, ConverterParameter=3, Converter={StaticResource intToVisibilityConverter}, ElementName=StartType}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox InputScope="Number" TextAlignment="Right" 
+                             Text="{Binding TimeEndOffsetDays, Converter={StaticResource intToStringConverter}, Mode=TwoWay}" />
+                    <TextBlock Text="{Binding Path=LocalizedResources.Days, Source={StaticResource LocalizedStrings}}" 
+                               Grid.Column="1" VerticalAlignment="Center" Margin="0,0,12,0"
+                               Style="{StaticResource PhoneTextTitle3Style}" />
+                </Grid>
+                <Grid Visibility="{Binding SelectedIndex, ConverterParameter=0|1|2, Converter={StaticResource intToVisibilityConverter}, ElementName=StartType}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox InputScope="Number" TextAlignment="Right" 
+                             Text="{Binding TimeEndOffsetDays, Converter={StaticResource intToStringConverter}, Mode=TwoWay}" />
+                    <TextBlock Text="{Binding Path=LocalizedResources.Days, Source={StaticResource LocalizedStrings}}" 
+                               Grid.Column="1" VerticalAlignment="Center" Margin="0,0,12,0"
+                               Style="{StaticResource PhoneTextTitle3Style}" />
+                    <TextBox InputScope="Number" TextAlignment="Right" Grid.Column="2" 
+                             Text="{Binding TimeEndOffsetHours, Converter={StaticResource intToStringConverter}, Mode=TwoWay}" />
+                    <TextBlock Text="{Binding Path=LocalizedResources.Hours, Source={StaticResource LocalizedStrings}}" 
+                               Grid.Column="3" VerticalAlignment="Center" Margin="0,0,12,0"
+                               Style="{StaticResource PhoneTextTitle3Style}" />
+                    <TextBox x:Name="EndMinutesOffset" InputScope="Number" TextAlignment="Right" Grid.Column="4" 
+                             Text="{Binding TimeEndOffsetMinutes, Converter={StaticResource intToStringConverter}, Mode=TwoWay}" />
+                    <TextBlock Text="{Binding Path=LocalizedResources.Minutes, Source={StaticResource LocalizedStrings}}" 
+                               Grid.Column="5" VerticalAlignment="Center" Margin="0,0,12,0"
+                               Style="{StaticResource PhoneTextTitle3Style}" />
+                </Grid>
+                <TextBlock Text="{Binding Path=LocalizedResources.Reminder, Source={StaticResource LocalizedStrings}}" 
+                           VerticalAlignment="Center" Margin="12,12,12,0"
+                           Style="{StaticResource PhoneTextTitle3Style}"/>
+                <toolkit:ListPicker x:Name="Reminder" SelectedIndex="{Binding Reminder, Mode=TwoWay}"/>
+                <TextBlock Text="{Binding Path=LocalizedResources.Status, Source={StaticResource LocalizedStrings}}" 
+                           VerticalAlignment="Center" Margin="12,12,12,0"
+                           Style="{StaticResource PhoneTextTitle3Style}" />
+                <toolkit:ListPicker SelectedIndex="{Binding Status, Mode=TwoWay}">
+                    <toolkit:ListPickerItem Content="{Binding Path=LocalizedResources.Status0, Source={StaticResource LocalizedStrings}}"/>
+                    <toolkit:ListPickerItem Content="{Binding Path=LocalizedResources.Status1, Source={StaticResource LocalizedStrings}}"/>
+                    <toolkit:ListPickerItem Content="{Binding Path=LocalizedResources.Status2, Source={StaticResource LocalizedStrings}}"/>
+                    <toolkit:ListPickerItem Content="{Binding Path=LocalizedResources.Status3, Source={StaticResource LocalizedStrings}}"/>
+                </toolkit:ListPicker>
+                <TextBlock Text="{Binding Path=LocalizedResources.Notes, Source={StaticResource LocalizedStrings}}" 
+                                   VerticalAlignment="Center" Margin="12,12,12,0"
+                                   Style="{StaticResource PhoneTextTitle3Style}" />
+                <TextBox x:Name="Notes" InputScope="Text" AcceptsReturn="True"
+                         IsEnabled="{Binding IsChecked, ElementName=UseNotes}" 
+                         Text="{Binding Note, Mode=TwoWay}"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True">
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/save.png" Text="save" Click="Save_Click" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cancel.png" Text="cancel" Click="Cancel_Click" />
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>

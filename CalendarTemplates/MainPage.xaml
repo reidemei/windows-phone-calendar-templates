@@ -1,0 +1,79 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="net.reidemeister.wp.CalendarTemplates.Pages.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:r="clr-namespace:net.reidemeister.wp.CalendarTemplates.Resources"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True"
+    toolkit:TiltEffect.IsTiltEnabled="True"
+    Style="{StaticResource TransitionPageStyle}">
+
+    <phone:PhoneApplicationPage.Resources>
+        <r:StringToUriValueConverter x:Key="stringToUriValueConverter"/>
+    </phone:PhoneApplicationPage.Resources>
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
+            <TextBlock Text="{Binding Path=LocalizedResources.MainTitle, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <phone:LongListSelector x:Name="TemplatesList" 
+                                    ItemsSource="{Binding Templates}" 
+                                    LayoutMode="List"
+                                    IsGroupingEnabled="False">
+                <phone:LongListSelector.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="0,0,0,5"
+                              ManipulationStarted="TemplatesList_ManipulationStarted" 
+                              ManipulationCompleted="TemplatesList_ManipulationCompleted" 
+                              Tap="TemplatesList_Tap" Hold="TemplatesList_Hold">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <toolkit:ContextMenuService.ContextMenu>
+                                <toolkit:ContextMenu IsZoomEnabled="False">
+                                    <toolkit:MenuItem Click="EditMenu_Click"
+                                                      Header="{Binding Path=LocalizedResources.Edit, Source={StaticResource LocalizedStrings}}"/>
+                                    <toolkit:MenuItem Click="DeleteMenu_Click"
+                                                      Header="{Binding Path=LocalizedResources.Delete, Source={StaticResource LocalizedStrings}}"/>
+                                    <toolkit:MenuItem Click="PinMenu_Click"
+                                                      Header="{Binding Path=LocalizedResources.Pin, Source={StaticResource LocalizedStrings}}"/>
+                                </toolkit:ContextMenu>
+                            </toolkit:ContextMenuService.ContextMenu>
+                            <Image Source="{Binding Icon, Converter={StaticResource stringToUriValueConverter}}" Stretch="Fill" Width="76" Height="76" Margin="0,-10" VerticalAlignment="CEnter" />
+                            <TextBlock Text="{Binding Name}" TextWrapping="Wrap" Grid.Column="1"
+                                        Style="{StaticResource PhoneTextLargeStyle}" VerticalAlignment="Center"/>
+                        </Grid>
+                    </DataTemplate>
+                </phone:LongListSelector.ItemTemplate>
+            </phone:LongListSelector>
+        </Grid>
+    </Grid>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/add.png" Text="new entry" Click="Add_Click" />
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem IsEnabled="True" Text="help" Click="Help_Click" />
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>
