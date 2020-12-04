@@ -13,7 +13,7 @@ namespace net.reidemeister.wp.CalendarTemplates.Data
     {
         public Model()
         {
-            this.Templates = new ObservableCollection<CalendarTemplate>();
+            this.Templates = new SortedObservableCollection<CalendarTemplate>();
         }
 
         /// <summary>

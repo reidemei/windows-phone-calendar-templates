@@ -1,0 +1,10 @@
+﻿1.1.0.0
+ - new: auto-select text on time fields
+ - new: donation link on the run page
+ - new: update title on edit
+ - new: remove tile on delete
+ - new: sort templates by name
+ - fixed: edited items get lost after app restart
+
+1.0.0.0
+ - initial version

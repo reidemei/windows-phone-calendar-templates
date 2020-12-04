@@ -516,6 +516,42 @@ namespace net.reidemeister.wp.CalendarTemplates.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        /// </summary>
+        public static string RunDonation1 {
+            get {
+                return ResourceManager.GetString("RunDonation1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die If you like the app consider giving me a  ähnelt.
+        /// </summary>
+        public static string RunDonation2 {
+            get {
+                return ResourceManager.GetString("RunDonation2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die donation ähnelt.
+        /// </summary>
+        public static string RunDonation3 {
+            get {
+                return ResourceManager.GetString("RunDonation3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die . ähnelt.
+        /// </summary>
+        public static string RunDonation4 {
+            get {
+                return ResourceManager.GetString("RunDonation4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Microsoft does not provide a way to close the app. Please use the back button. ähnelt.
         /// </summary>
         public static string RunNote {

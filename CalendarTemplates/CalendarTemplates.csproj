@@ -94,12 +94,14 @@
     </Compile>
     <Compile Include="Data\Model.cs" />
     <Compile Include="Data\CalendarTemplate.cs" />
+    <Compile Include="Data\SortedObservableCollection.cs" />
     <Compile Include="EditTemplatePage.xaml.cs">
       <DependentUpon>EditTemplatePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="HelpPage.xaml.cs">
       <DependentUpon>HelpPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Resources\AttachedProperties.cs" />
     <Compile Include="Resources\LocalizedStrings.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -889,12 +891,13 @@
     <None Include="Assets\Store\720p\de\7.de.edit2.png" />
     <None Include="Assets\Store\720p\de\7.de.list.png" />
     <None Include="Assets\Store\720p\de\7.de.menu.png" />
-    <Content Include="Assets\Store\descr.txt" />
-    <Content Include="Assets\Store\donation.txt" />
-    <Content Include="Assets\Store\store.logo.donation.big.png" />
-    <Content Include="Assets\Store\store.logo.donation.medium.png" />
-    <Content Include="Assets\Store\store.logo.donation.small.png" />
-    <Content Include="Assets\Store\store.logo.png" />
+    <None Include="Assets\Store\descr.txt" />
+    <None Include="Assets\Store\donation.txt" />
+    <None Include="Assets\Store\history.txt" />
+    <None Include="Assets\Store\store.logo.donation.big.png" />
+    <None Include="Assets\Store\store.logo.donation.medium.png" />
+    <None Include="Assets\Store\store.logo.donation.small.png" />
+    <None Include="Assets\Store\store.logo.png" />
     <None Include="Assets\Store\WVGA\en\v.en.edit1.png" />
     <None Include="Assets\Store\WVGA\en\v.en.edit2.png" />
     <None Include="Assets\Store\WVGA\en\v.en.list.png" />

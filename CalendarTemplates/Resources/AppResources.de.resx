@@ -177,7 +177,7 @@
     <value>Klein</value>
   </data>
   <data name="HelpIntro" xml:space="preserve">
-    <value>"Kalendervorlagen" erlaubt das Anlegen von Vorlagen, mit denen schnell Kalendereinträge erstellt werden können. Diese Vorlagen können auch auf der Startseite angezeigt werden.</value>
+    <value>"Kalendervorlagen" erlaubt das Anlegen von Vorlagen, mit denen schnell Kalendereinträge erstellt werden können. Diese Vorlagen können auch auf der Startseite angeheftet werden.</value>
   </data>
   <data name="HelpSupportDescr1" xml:space="preserve">
     <value>Für Fragen, Anmerkungen, Wünsche oder bei Probleme können Sie mich unter folgender Adresse kontaktieren.</value>
@@ -311,7 +311,7 @@ Vorlagen können auch auf der Startseite angeheftet werden (siehe Kontexmenü). 
     <value>Feste Zeit</value>
   </data>
   <data name="Time2" xml:space="preserve">
-    <value>Aktuelle Zeit + Aufschlag</value>
+    <value>Aktuelle Zeit + ... Minuten</value>
   </data>
   <data name="Time3" xml:space="preserve">
     <value>Ganztägig</value>
@@ -321,5 +321,17 @@ Vorlagen können auch auf der Startseite angeheftet werden (siehe Kontexmenü). 
   </data>
   <data name="Version" xml:space="preserve">
     <value>Version </value>
+  </data>
+  <data name="RunDonation2" xml:space="preserve">
+    <value>mich über eine </value>
+  </data>
+  <data name="RunDonation3" xml:space="preserve">
+    <value>Spende</value>
+  </data>
+  <data name="RunDonation4" xml:space="preserve">
+    <value> freuen.</value>
+  </data>
+  <data name="RunDonation1" xml:space="preserve">
+    <value>Falls Ihnen die App gefällt, würde ich</value>
   </data>
 </root>
