@@ -29,12 +29,6 @@ namespace net.reidemeister.wp.CalendarTemplates.Pages
             menu.Click += Debug_Click;
             this.ApplicationBar.MenuItems.Add(menu);
 #endif
-            App.Model.Templates.CollectionChanged += Templates_CollectionChanged;
-        }
-
-        void Templates_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
-        {
-            (this.ApplicationBar.Buttons[0] as ApplicationBarIconButton).IsEnabled = App.Model.Templates.Count < 8;
         }
 
         protected async override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
